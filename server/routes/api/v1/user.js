@@ -6,5 +6,6 @@ import userController from '../../../controllers/user';
 const router = express.Router();
 
 router.get('/:username', userController.getUser);
+router.post('/search/people', userController.searchPeople);
 
 export default router;
