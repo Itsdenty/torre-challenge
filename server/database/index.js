@@ -17,8 +17,21 @@ class database {
     return new Promise(async (resolve, reject) => {
       const { size, offset } = query;
       try {
-        const userData = await axios.post(`https://search.torre.co/people/_search/?[offset=${offset}&size=${size}&aggregate=false]`, body);
-        resolve(userData.data);
+        const peopleData = await axios.post(`https://search.torre.co/people/_search/?[offset=${offset}&size=${size}&aggregate=false]`, body);
+        resolve(peopleData.data);
+      } catch (e) {
+        const error = new Error(e);
+        reject(error);
+      }
+    });
+  }
+
+  static getOpportunities(query, body) {
+    return new Promise(async (resolve, reject) => {
+      const { size, offset } = query;
+      try {
+        const opportunityData = await axios.post(`https://search.torre.co/opportunities/_search/?[offset=${offset}&size=${size}&aggregate=false]`, body);
+        resolve(opportunityData.data);
       } catch (e) {
         const error = new Error(e);
         reject(error);
