@@ -3,6 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import routes from './routes';
+import validator from 'express-validator';
 
 const app = express();
 const port = process.env.PORT || '3100';
@@ -18,6 +19,9 @@ app.use(bodyParser.json());
 
 // use the defined routes
 app.use('/', routes);
+
+// configure validator
+app.use(validator());
 
 // error handler
 app.use((err, req, res, next) => {

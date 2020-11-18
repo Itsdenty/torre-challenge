@@ -1,9 +1,9 @@
 import express from 'express';
+import Validator from '../../../middlewares/validators/user';
 
 
 const router = express.Router();
-router.get('/', (req, res) => {
-  res.send('sample user profile endpoint');
-});
+
+router.get('/', Validator.get);
 
 export default router;
