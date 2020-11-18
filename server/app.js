@@ -2,8 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
-import routes from './routes';
+import path from 'path';
 import validator from 'express-validator';
+import routes from './routes';
 
 const app = express();
 const port = process.env.PORT || '3100';
@@ -16,6 +17,11 @@ app.use(cors());
 
 // configure bodyParser
 app.use(bodyParser.json());
+
+// configure swagger-ui
+app.use('/api-docs', express.static(
+  path.join(__dirname, '../server/public/dist'),
+));
 
 // use the defined routes
 app.use('/', routes);
