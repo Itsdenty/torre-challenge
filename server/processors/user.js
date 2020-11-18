@@ -16,8 +16,6 @@ class userProcessor {
    */
   static async getUser(username) {
     try {
-      // run query to save data to database
-
       // run database function
       const resp = await database.getUser(username);
 
@@ -30,6 +28,52 @@ class userProcessor {
       throw err;
     }
   }
+
+  static async getPeople(query, body) {
+    try {
+      // run database function
+      const resp = await database.getPeople(query, body);
+
+      // return resp to controller
+      return resp;
+    } catch (e) {
+      // create and throw 500 error
+      logger.error(e);
+      const err = userErrors.usr1(e, 400);
+      throw err;
+    }
+  }
+
+  static async getOpportunities(query, body) {
+    try {
+      // run database function
+      const resp = await database.getOpportunities(query, body);
+
+      // return resp to controller
+      return resp;
+    } catch (e) {
+      // create and throw 500 error
+      logger.error(e);
+      const err = userErrors.usr1(e, 400);
+      throw err;
+    }
+  }
+
+  static async getOpportunity(jobId) {
+    try {
+      // run database function
+      const resp = await database.getOpportunity(jobId);
+
+      // return resp to controller
+      return resp;
+    } catch (e) {
+      // create and throw 500 error
+      logger.error(e);
+      const err = userErrors.usr1(e, 400);
+      throw err;
+    }
+  }
 }
+
 
 export default userProcessor;

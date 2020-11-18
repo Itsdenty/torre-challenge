@@ -53,6 +53,16 @@ class userController {
       res.status(500).json(error);
     }
   }
+
+  static async getOpprotunity(req, res) {
+    try {
+      const getOpportunity = await processor.getOpprotunity(req.params.jobId);
+      res.status(200).json(getOpportunity);
+    } catch (error) {
+      logger.error(error);
+      res.status(500).json(error);
+    }
+  }
 }
 
 export default userController;
