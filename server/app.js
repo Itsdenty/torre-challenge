@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
+import routes from './routes';
 
 const app = express();
 const port = process.env.PORT || '3100';
@@ -15,6 +16,8 @@ app.use(cors());
 // configure bodyParser
 app.use(bodyParser.json());
 
+// use the defined routes
+app.use('/', routes);
 
 // error handler
 app.use((err, req, res, next) => {
