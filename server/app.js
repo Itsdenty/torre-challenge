@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import validator from 'express-validator';
 import routes from './routes';
+import logger from './utils/logger';
 
 const app = express();
 const port = process.env.PORT || '3100';
@@ -32,7 +33,7 @@ app.use(validator());
 // error handler
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
-  console.log(err);
+  logger.error(err);
   if (err) {
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -43,7 +44,7 @@ app.use((err, req, res, next) => {
 
 
 app.listen(port || 3000, () => {
-  console.log(`Started on port ${port}`);
+  logger.info(`Started on port ${port}`);
 });
 
 export default app;

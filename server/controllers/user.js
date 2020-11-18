@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import processor from '../processors/user';
+import logger from '../utils/logger';
 /**
  *
  *
@@ -17,9 +18,10 @@ class userController {
    */
   static async getUser(req, res) {
     try {
-      const getUser = await processor.createCustomer(req.body);
+      const getUser = await processor.getUser(req.params.username);
       res.status(200).json(getUser);
     } catch (error) {
+      logger.error(error);
       res.status(500).json(error);
     }
   }
