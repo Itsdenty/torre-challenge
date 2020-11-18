@@ -1,6 +1,7 @@
 import express from 'express';
 
 
+import swaggerJSDoc from 'swagger-jsdoc';
 import customer from './user';
 
 const router = express.Router();
