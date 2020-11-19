@@ -24,6 +24,10 @@ app.use('/api-docs', express.static(
   path.join(__dirname, '../server/public/dist'),
 ));
 
+// configure swagger-ui
+app.use('/', express.static(
+  path.join(__dirname, '../client/dist'),
+));
 // use the defined routes
 app.use('/', routes);
 

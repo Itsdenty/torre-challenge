@@ -5,35 +5,32 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test nyc mocha --timeout 20000 -r @babel/register server/tests/*.test.js --exit",
-    "start": "nodemon --exec babel-node server/app.js"
+    "start-dev": "nodemon --exec babel-node server/app.js",
+    "build-server": "babel server --out-dir dist",
+    "build-client": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "start": "node dist/app.js",
+    "heroku-postbuild": "npm run build-client && npm run build-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Itsdenty/turing-fullstack-challenge.git"
+    "url": "https://github.com/Itsdenty/torre-challenge/issues"
   },
   "keywords": [],
-  "author": "",
+  "author": "Abd-afeez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Itsdenty/turing-fullstack-challenge/issues"
+    "url": "https://github.com/Itsdenty/torre-challenge/issues"
   },
-  "homepage": "https://github.com/Itsdenty/turing-fullstack-challenge#readme",
+  "homepage": "https://github.com/Itsdenty/torre-challenge",
   "dependencies": {
     "@babel/runtime": "^7.4.5",
     "axios": "^0.21.0",
-    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-validator": "^5.3.1",
-    "jsonwebtoken": "^8.5.1",
-    "mailgun-js": "^0.22.0",
-    "moment": "^2.24.0",
     "morgan": "^1.9.1",
-    "mysql": "^2.17.1",
-    "redis": "^2.8.0",
-    "stripe": "^7.2.0",
     "swagger-jsdoc": "^3.2.9",
     "winston": "^3.2.1"
   },

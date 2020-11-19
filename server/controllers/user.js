@@ -54,9 +54,9 @@ class userController {
     }
   }
 
-  static async getOpprotunity(req, res) {
+  static async getOpportunity(req, res) {
     try {
-      const getOpportunity = await processor.getOpprotunity(req.params.jobId);
+      const getOpportunity = await processor.getOpportunity(req.params.jobId);
       res.status(200).json(getOpportunity);
     } catch (error) {
       logger.error(error);
