@@ -1,8 +1,5 @@
 # torre-challenge
-A fullstack implementation of torre challenge using expressjs and react
-# Andela VLF Challenge
-
-Andela VLF Sendit is an app that allows users to send parcels to anywhere in Nigeria
+A fullstack implementation of torre challenge using expressjs and vuejs
 
 
 The App is hosted on heroku [ here ](https://torre-challenge-fullstack.herokuapp.com).
@@ -43,7 +40,7 @@ The endpoints are hosted on heroku [ here ](https://torre-challenge-fullstack.he
     response transformer function.
 ## Installation.
   * Install [Nodejs](https://nodejs.org/en/download/)
-  * Clone this repo ``` git clone https://github.com/itsdenty/andela-vlf-challenge.git ```
+  * Clone this repo ``` git clone https://github.com/Itsdenty/torre-challenge.git ```
   * Run ```npm install``` to install the required dependencies
   * Run ```npm run start-dev``` to run the development server
   * Navigate to http://localhost:3100/api/v1/
@@ -89,7 +86,7 @@ The endpoints are hosted on heroku [ here ](https://torre-challenge-fullstack.he
 </table>
 
 
-For more details on how to use this API, check the **Documentation** out [ here ](https://andela-vlf.herokuapp.com/api-docs/).
+For more details on how to use this API, check the **Documentation** out [ here ](https://torre-challenge-fullstack.herokuapp.com/api-docs/).
 
 ## License and Copyright
 &copy; Abd-afeez Abd-hamid
