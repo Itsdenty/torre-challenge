@@ -28,14 +28,14 @@ export default new Vuex.Store({
     },
     actions: {
         async getPeople({commit}){
-          await axios.post("http://localhost:3100/api/v1/user/search/people?size=10&offset=0")
+          await axios.post("https://torre-challenge-fullstack.herokuapp.com/api/v1/user/search/people?size=10&offset=0")
           .then(({data}) =>{ 
             console.log(data);
             commit('setPeople', data.results)
           })
         },
         async getOpportunities({commit}){
-          await axios.post("http://localhost:3100/api/v1/user/search/opportunities?size=10&offset=0")
+          await axios.post("https://torre-challenge-fullstack.herokuapp.com/api/v1/user/search/opportunities?size=10&offset=0")
           .then(({data}) =>{ 
             console.log(data);
             commit('setOpportunities', data.results)
