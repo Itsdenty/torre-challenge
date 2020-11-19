@@ -38,6 +38,18 @@ class database {
       }
     });
   }
+
+  static getOpportunity(jobId) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const jobData = await axios.get(` https://torre.co/api/opportunities/${jobId}`);
+        resolve(jobData.data);
+      } catch (e) {
+        const error = new Error(e);
+        reject(error);
+      }
+    });
+  }
 }
 
 export default database;
