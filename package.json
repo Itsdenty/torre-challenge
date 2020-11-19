@@ -7,19 +7,19 @@
     "test": "NODE_ENV=test nyc mocha --timeout 20000 -r @babel/register server/tests/*.test.js --exit",
     "start": "nodemon --exec babel-node server/app.js",
     "client": "npm start --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Itsdenty/turing-fullstack-challenge.git"
+    "url": ""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Itsdenty/turing-fullstack-challenge/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/Itsdenty/turing-fullstack-challenge#readme",
+  "homepage": "",
   "dependencies": {
     "@babel/runtime": "^7.4.5",
     "axios": "^0.21.0",
