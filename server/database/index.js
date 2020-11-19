@@ -16,8 +16,9 @@ class database {
   static getPeople(query, body) {
     return new Promise(async (resolve, reject) => {
       const { size, offset } = query;
+      console.log(body);
       try {
-        const peopleData = await axios.post(`https://search.torre.co/people/_search/?[offset=${offset}&size=${size}&aggregate=false]`, body);
+        const peopleData = await axios.post(`https://search.torre.co/people/_search/?[offset=0&size=9&aggregate=false]`, body);
         resolve(peopleData.data);
       } catch (e) {
         const error = new Error(e);
@@ -29,8 +30,9 @@ class database {
   static getOpportunities(query, body) {
     return new Promise(async (resolve, reject) => {
       const { size, offset } = query;
+      console.log(size, offset);
       try {
-        const opportunityData = await axios.post(`https://search.torre.co/opportunities/_search/?[offset=${offset}&size=${size}&aggregate=false]`, body);
+        const opportunityData = await axios.post(`https://search.torre.co/opportunities/_search/?[offset=10&size=9&aggregate=false]`, body);
         resolve(opportunityData.data);
       } catch (e) {
         const error = new Error(e);
